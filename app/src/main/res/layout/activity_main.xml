@@ -4,43 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8F0F2"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="344dp"
-        android:layout_height="98dp"
-        android:text="SSD - Assignment 3 - Let Me Talk To You!"
-        app:layout_constraintBottom_toTopOf="@+id/input_text"
+        android:id="@+id/header_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Text To Speech Demo"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="#1C3F60"
+        android:fontFamily="sans-serif-medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toTopOf="@+id/input_text"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/input_text"
-        android:layout_width="349dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="96dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
         android:hint="Enter text here"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintWidth_percent="0.8" />
+        android:background="@drawable/edittext_background"
+        android:padding="12dp"
+        android:textColor="#1C3F60"
+        android:textColorHint="#5A89A6"
+        app:layout_constraintTop_toBottomOf="@+id/header_text"
+        app:layout_constraintBottom_toTopOf="@+id/instruction_text"
+        app:layout_constraintEnd_toEndOf="@+id/header_text"
+        app:layout_constraintStart_toStartOf="@+id/header_text"
+        app:layout_constraintWidth_percent="0.6"/>
+
+    <TextView
+        android:id="@+id/instruction_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Please Enter Your Text Here"
+        android:textSize="14sp"
+        android:textColor="#5A89A6"
+        app:layout_constraintTop_toBottomOf="@+id/input_text"
+        app:layout_constraintBottom_toTopOf="@+id/speak_button"
+        app:layout_constraintEnd_toEndOf="@+id/input_text"
+        app:layout_constraintStart_toStartOf="@+id/input_text" />
 
     <Button
         android:id="@+id/speak_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="32dp"
         android:text="Speak"
+        android:backgroundTint="#1C3F60"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toBottomOf="@+id/instruction_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_text"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintWidth_percent="0.5" />
+
+    <Button
+        android:id="@+id/go_to_speech_to_text_demo_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Speech To Text"
+        android:backgroundTint="#1C3F60"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toBottomOf="@+id/speak_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

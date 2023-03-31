@@ -1,5 +1,6 @@
 package com.example.ssd_assignment3_tts
 
+import android.content.Intent
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         speakButton.setOnClickListener {
             val text = inputText.text.toString()
             speakOut(text)
+        }
+        val speechToTextButton: Button = findViewById(R.id.go_to_speech_to_text_demo_button)
+        speechToTextButton.setOnClickListener {
+            val intent = Intent(this, SpeechToTextActivity::class.java)
+            startActivity(intent)
         }
     }
 
